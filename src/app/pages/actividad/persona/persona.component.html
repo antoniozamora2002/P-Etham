@@ -1,0 +1,39 @@
+<div class="container mt-3">
+<button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
+<div class="table-responsive">
+  <table class="table table-bordered table-striped ">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Nombre</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>DNI</th>
+      <th>Télefono</th>
+      <th>Tipo</th>
+      <th colspan="2" class="text-center">Opciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let persona of personas; index as i" >
+      <td>{{persona.peId}}</td>
+      <td>{{persona.peNombres}}</td>
+      <td>{{persona.peApPaterno}}</td>
+      <td>{{persona.peApMaterno}}</td>
+      <td>{{persona.peDni}}</td>
+      <td>{{persona.peTelefono}}</td>
+      <td>{{persona.tipoPersona}}</td>
+      <td>
+        <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(persona)">Editar
+        </button>
+      </td>
+      <td>
+        <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(persona)">Eliminar
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+</div>

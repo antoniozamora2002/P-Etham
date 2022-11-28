@@ -1,0 +1,57 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}} Taller</h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="frmTaller">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Tema</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="tallTopic" class="form-control" placeholder="Ingrese tema">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Descripción</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="proDescripcion" class="form-control" placeholder="Ingrese Descripción">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Hora</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="tallHour" class="form-control" placeholder="Ingrese hora">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Lugar</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="tallPlace" class="form-control" placeholder="Ingrese lugar">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Hrs Academicas</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="tallHourAcade" class="form-control" placeholder="Ingrese horas">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Programa</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="programa" class="form-control" placeholder="Ingrese programa">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">tallDesc</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="proDescripcion" class="form-control" placeholder="Ingrese Descripción">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" [disabled]="frmTaller.invalid" *ngIf="title=='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" [disabled]="frmTaller.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('Cancel')">Cancelar</button>
+</div>

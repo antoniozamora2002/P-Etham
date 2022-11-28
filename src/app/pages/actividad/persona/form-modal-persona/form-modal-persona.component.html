@@ -1,0 +1,51 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}} Persona</h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="frmPersona">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Nombres</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="peNombres" class="form-control" placeholder="Ingrese nombre">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Apellido Paterno</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="peApPaterno" class="form-control" placeholder="Ingrese apellido">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Apellido Materno</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="peApMaterno" class="form-control" placeholder="Ingrese apellido">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">DNI</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="peDni" class="form-control" placeholder="Ingrese DNI">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Télefono</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="peTelefono" class="form-control" placeholder="Ingrese télefono">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Tipo</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="tipoPersona" class="form-control" placeholder="Ingrese tipo de persona">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Nueva'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('Cancel')">Cancelar</button>
+</div>
