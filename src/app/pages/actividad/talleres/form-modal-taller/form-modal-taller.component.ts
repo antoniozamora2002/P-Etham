@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {NgbActiveModal} from "@ng-bootstrap/ng-bootstrap";
-import {ProgramaService} from "../../../../providers/services/programa.service";
 import {TallerService} from "../../../../providers/services/taller.service";
+import {ProgramaService} from "../../../../providers/services/programa.service";
 
 @Component({
   selector: 'app-form-modal-taller',
@@ -12,55 +12,68 @@ import {TallerService} from "../../../../providers/services/taller.service";
 export class FormModalTallerComponent implements OnInit {
 
   @Input() title: any;
-  @Input() tallId: any;
+  @Input() taId: any;
   @Input() item: any;
   //@ts-ignore
   frmTaller: FormGroup;
-
+  programas: any = [];
   constructor(
     public activeModal: NgbActiveModal,
     private formBuilder:FormBuilder,
-    private tallerService: TallerService
+    private tallerService: TallerService,
+    private programaService: ProgramaService
   ) { }
+
+   Id = document.getElementById('id');
+
+
 
   ngOnInit(): void {
     this.formInit(); //el formulario esta inicializado
+    this.getProgramas();
     if(this.item){
       this.updateData();
     }
   }
 
+  getProgramas(): void {
+    this.programaService.getAll$().subscribe(response => {
+      this.programas = response.data || [];
+    });
+  }
+
   formInit(): void {
     const controls = {
-      tallTopic: ['', [Validators.required]],
-      tallDate: ['', [Validators.required]],
-      tallHour: ['', [Validators.required]],
-      tallPlace: ['', [Validators.required]],
-      tallDesc: ['', [Validators.required]],
-      tallHourAcade: ['', [Validators.required]],
-      programa: ['', [Validators.required]]
-
-
+      taTema: ['', [Validators.required]],
+      taDesc: ['', [Validators.required]],
+      taFecha: ['', ],
+      taHora: ['', [Validators.required]],
+      taHoraAcademicas: ['', [Validators.required]],
+      taLugar: ['', [Validators.required]],
+      proId: ['', [Validators.required]],
     };
     this.frmTaller= this.formBuilder.group(controls);// construir formulario
   }
 
   save(): void {
-    this.tallerService.add$(this.frmTaller.value).subscribe(response =>{
+    let data = Object.assign(this.frmTaller.value, {programa: {proId: this.frmTaller.value.proId}});
+    this.tallerService.add$(data).subscribe(response =>{
       if (response.success) {
         this.activeModal.close({success: true, message: response.message});
       }
     });//serializa y envia formato tipo JS
   }
   update(): void {
-    this.tallerService.update$(this.tallId, this.frmTaller.value).subscribe(response => {
+
+    this.tallerService.update$(this.taId, this.frmTaller.value).subscribe(response => {
       if (response.success) {
         this.activeModal.close({success: true, message:response.message});
       }
     });
   }
   updateData(): void{
-    this.frmTaller.patchValue(this.item);
+    let data = Object.assign(this.item, {proId: this.item.programa.proId});
+    this.frmTaller.patchValue(data);
   }
 
 }

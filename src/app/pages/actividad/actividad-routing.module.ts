@@ -1,4 +1,4 @@
-import {RouterModule, Routes} from "@angular/router";
+  import {RouterModule, Routes} from "@angular/router";
 import {NgModule} from "@angular/core";
 
 //import { DashboardComponent } from "./pages/dashboard/dashboard.component";

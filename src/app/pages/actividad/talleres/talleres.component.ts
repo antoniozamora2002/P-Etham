@@ -25,6 +25,9 @@ export class TalleresComponent implements OnInit {
     });
   }
 
+
+
+
   openModal(): void {
     const modal = this.modalService.open(FormModalTallerComponent, {
       size: 'lg',
@@ -52,7 +55,7 @@ export class TalleresComponent implements OnInit {
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.proId = item.proId;
+    modal.componentInstance.taId = item.taId;
     modal.componentInstance.item = item;
     modal.componentInstance.title = 'Modificar';
     modal.result.then(res => {
@@ -70,8 +73,8 @@ export class TalleresComponent implements OnInit {
     });
   }
   public onDelete(item: any): void {
-    const ID = item.proId;
-    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.proNombre;
+    const ID = item.taId;
+    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.taTema;
     if (ID) {
       Swal.fire({
         title: 'Se eliminará el registro',

@@ -17,6 +17,7 @@ export class ProgramasComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProgramas();
+
   }
 
   getProgramas(): void {

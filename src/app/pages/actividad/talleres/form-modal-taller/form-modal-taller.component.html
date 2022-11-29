@@ -9,43 +9,45 @@
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Tema</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="tallTopic" class="form-control" placeholder="Ingrese tema">
+        <input type="text" formControlName="taTema" class="form-control" placeholder="Ingrese tema">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Descripción</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="proDescripcion" class="form-control" placeholder="Ingrese Descripción">
+        <input type="text" formControlName="taDesc" class="form-control" placeholder="Ingrese Descripción">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Fecha</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="taFecha" class="form-control" placeholder="Ingrese Fecha">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Hora</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="tallHour" class="form-control" placeholder="Ingrese hora">
+        <input type="text" formControlName="taHora" class="form-control" placeholder="Ingrese hora">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Lugar</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="tallPlace" class="form-control" placeholder="Ingrese lugar">
+        <input type="text" formControlName="taLugar" class="form-control" placeholder="Ingrese lugar">
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Hrs Academicas</label>
+      <label class="col-sm-3 col-form-label">Horas Acad.</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="tallHourAcade" class="form-control" placeholder="Ingrese horas">
+        <input type="text" formControlName="taHoraAcademicas" class="form-control" placeholder="Ingrese horas">
       </div>
     </div>
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Programa</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="programa" class="form-control" placeholder="Ingrese programa">
-      </div>
-    </div>
-    <div class="form-group row">
-      <label class="col-sm-3 col-form-label">tallDesc</label>
-      <div class="col-sm-9">
-        <input type="text" formControlName="proDescripcion" class="form-control" placeholder="Ingrese Descripción">
+        <select class="form-control" formControlName="proId">
+          <option *ngFor="let programa of programas" [value]="programa.proId">{{programa.proNombre}}</option>
+        </select>
       </div>
     </div>
   </form>
