@@ -15,9 +15,12 @@ export class FormModalTipoPersonaComponent implements OnInit {
   @Input() item: any;
   //@ts-ignore
   frmTipoPersona: FormGroup;
-  constructor(public activeModal: NgbActiveModal,
-              private formBuilder:FormBuilder,
-              private tipopersonaService: TipoPersonaService) { }
+
+  constructor(
+    public activeModal: NgbActiveModal,
+    private formBuilder:FormBuilder,
+    private tipotipopersonaService: TipoPersonaService
+  ) { }
 
   ngOnInit(): void {
     this.formInit(); //el formulario esta inicializado
@@ -29,21 +32,22 @@ export class FormModalTipoPersonaComponent implements OnInit {
   formInit(): void {
     const controls = {
       tpNombre: ['', [Validators.required]],
-      tpDesc: ['', [Validators.required]]
+      tpDesc: ['', [Validators.required]],
+
 
     };
     this.frmTipoPersona= this.formBuilder.group(controls);// construir formulario
   }
 
   save(): void {
-    this.tipopersonaService.add$(this.frmTipoPersona.value).subscribe(response =>{
+    this.tipotipopersonaService.add$(this.frmTipoPersona.value).subscribe(response =>{
       if (response.success) {
         this.activeModal.close({success: true, message: response.message});
       }
     });//serializa y envia formato tipo JS
   }
   update(): void {
-    this.tipopersonaService.update$(this.tpId, this.frmTipoPersona.value).subscribe(response => {
+    this.tipotipopersonaService.update$(this.tpId, this.frmTipoPersona.value).subscribe(response => {
       if (response.success) {
         this.activeModal.close({success: true, message:response.message});
       }

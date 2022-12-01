@@ -13,7 +13,7 @@ export class FormModalComponent implements OnInit {
   @Input() title: any;
   @Input() proId: any;
   @Input() item: any;
-    //@ts-ignore
+  //@ts-ignore
   frmPrograma: FormGroup;
   constructor( public activeModal: NgbActiveModal,
                private formBuilder:FormBuilder,
@@ -23,7 +23,7 @@ export class FormModalComponent implements OnInit {
   ngOnInit(): void {
     this.formInit(); //el formulario esta inicializado
     if(this.item){
-    this.updateData();
+      this.updateData();
     }
   }
 

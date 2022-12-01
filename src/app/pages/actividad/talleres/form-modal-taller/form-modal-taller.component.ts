@@ -24,7 +24,7 @@ export class FormModalTallerComponent implements OnInit {
     private programaService: ProgramaService
   ) { }
 
-   Id = document.getElementById('id');
+  Id = document.getElementById('id');
 
 
 
@@ -71,9 +71,10 @@ export class FormModalTallerComponent implements OnInit {
       }
     });
   }
-  updateData(): void{
+  updateData(): void {
+    //xd
     let data = Object.assign(this.item, {proId: this.item.programa.proId});
     this.frmTaller.patchValue(data);
   }
-
 }
+

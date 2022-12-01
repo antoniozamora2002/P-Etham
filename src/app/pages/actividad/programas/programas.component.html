@@ -1,16 +1,16 @@
 <div class="container mt-3">
-<button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
-<div class="table-responsive">
-  <table class="table table-bordered table-striped ">
-    <thead>
+  <button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped ">
+      <thead>
       <tr>
         <th>#</th>
         <th>Programas</th>
         <th>Descripción</th>
         <th colspan="2" class="text-center">Opciones</th>
       </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
       <tr *ngFor="let programa of programas; index as i" >
         <td>{{programa.proId}}</td>
         <td>{{programa.proNombre}}</td>
@@ -24,8 +24,8 @@
           </button>
         </td>
       </tr>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 
-</div>
+  </div>
 </div>

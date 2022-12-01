@@ -13,6 +13,7 @@ export class FormModalPersonaComponent implements OnInit {
   @Input() title: any;
   @Input() peId: any;
   @Input() item: any;
+  tipopersonas: any = [];
 
   //@ts-ignore
   frmPersona: FormGroup;
@@ -30,10 +31,10 @@ export class FormModalPersonaComponent implements OnInit {
   formInit(): void {
     const controls = {
       peNombres: ['', [Validators.required]],
-      peApPaterno: ['', [Validators.required]],
-      peApMaterno: ['', [Validators.required]],
-      peDni: ['', [Validators.required]],
-      peTelefono: ['', [Validators.required]],
+      peApellidoP: ['', [Validators.required]],
+      peApellidoM: ['', [Validators.required]],
+      peDNI: ['', [Validators.required]],
+      peFono: ['', [Validators.required]],
       tipoPersona: ['', [Validators.required]],
 
     };

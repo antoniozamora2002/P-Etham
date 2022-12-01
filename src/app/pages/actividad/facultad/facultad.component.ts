@@ -11,9 +11,9 @@ import {FormModalFacultadComponent} from "./form-modal-facultad/form-modal-facul
 })
 export class FacultadComponent implements OnInit {
 
-  facultades: any =[];
-  constructor(  private facultadService: FacultadService,
-                private modalService: NgbModal) { }
+  facultades: any = [];
+  constructor(private facultadService: FacultadService,
+              private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getFacultades();

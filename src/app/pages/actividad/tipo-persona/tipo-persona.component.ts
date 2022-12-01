@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {TipoPersonaService} from "../../../providers/services/tipo-persona.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {TipoPersonaService} from "../../../providers/services/tipo-persona.service";
 import Swal from "sweetalert2";
 import {FormModalTipoPersonaComponent} from "./form-modal-tipo-persona/form-modal-tipo-persona.component";
 
@@ -12,8 +12,9 @@ import {FormModalTipoPersonaComponent} from "./form-modal-tipo-persona/form-moda
 export class TipoPersonaComponent implements OnInit {
 
   tipopersonas: any = [];
-  constructor(private tipopersonaService: TipoPersonaService,
-              private modalService: NgbModal) { }
+  constructor(
+    private tipopersonaService: TipoPersonaService,
+    private modalService: NgbModal ) { }
 
   ngOnInit(): void {
     this.getTipoPersona();
