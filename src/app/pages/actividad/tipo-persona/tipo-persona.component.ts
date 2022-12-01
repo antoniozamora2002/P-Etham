@@ -1,33 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import {ProgramaService} from "../../../providers/services/programa.service";
+import {TipoPersonaService} from "../../../providers/services/tipo-persona.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormModalComponent} from "./form-modal/form-modal.component";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import {FormModalTipoPersonaComponent} from "./form-modal-tipo-persona/form-modal-tipo-persona.component";
 
 @Component({
-  selector: 'app-programas',
-  templateUrl: './programas.component.html',
-  styleUrls: ['./programas.component.css']
+  selector: 'app-tipo-persona',
+  templateUrl: './tipo-persona.component.html',
+  styleUrls: ['./tipo-persona.component.css']
 })
-export class ProgramasComponent implements OnInit {
+export class TipoPersonaComponent implements OnInit {
 
-  programas: any = [];
-  constructor(private programaService: ProgramaService,
+  tipopersonas: any = [];
+  constructor(private tipopersonaService: TipoPersonaService,
               private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.getProgramas();
-
+    this.getTipoPersona();
   }
 
-  getProgramas(): void {
-    this.programaService.getAll$().subscribe(response => {
-      this.programas = response.data || [];
+  getTipoPersona(): void {
+    this.tipopersonaService.getAll$().subscribe(response => {
+      this.tipopersonas = response.data || [];
     });
   }
 
   openModal(): void {
-    const modal = this.modalService.open(FormModalComponent, {
+    const modal = this.modalService.open(FormModalTipoPersonaComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
@@ -38,22 +37,22 @@ export class ProgramasComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Programa',
+          title: 'TipoPersona',
           text: `${res.message}`,
           showConfirmButton: false,
           timer: 1300
         })
-        this.getProgramas();
+        this.getTipoPersona();
       }
     })
   }
   openModalEdit(item: any): any {
-    const modal = this.modalService.open(FormModalComponent, {
+    const modal = this.modalService.open(FormModalTipoPersonaComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.proId = item.proId;
+    modal.componentInstance.tpId = item.tpId;
     modal.componentInstance.item = item;
     modal.componentInstance.title = 'Modificar';
     modal.result.then(res => {
@@ -61,18 +60,18 @@ export class ProgramasComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Programa',
+          title: 'TipoPersona',
           text: `${res.message}`,
           showConfirmButton: false,
           timer: 1300
         });
-        this.getProgramas();
+        this.getTipoPersona();
       }
     });
   }
   public onDelete(item: any): void {
-    const ID = item.proId;
-    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.proNombre;
+    const ID = item.tpId;
+    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.tpNombre;
     if (ID) {
       Swal.fire({
         title: 'Se eliminará el registro',
@@ -87,7 +86,7 @@ export class ProgramasComponent implements OnInit {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.value) {
-          this.programaService.delete$(ID).subscribe(data => {
+          this.tipopersonaService.delete$(ID).subscribe(data => {
             if (data.success) {
               Swal.fire({
                 title: 'Eliminado',
@@ -98,7 +97,7 @@ export class ProgramasComponent implements OnInit {
                 confirmButtonColor: '#7f264a',
                 timer: 1500,
               });
-              this.getProgramas();
+              this.getTipoPersona();
             }
           });
         }

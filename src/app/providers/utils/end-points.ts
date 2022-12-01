@@ -8,6 +8,8 @@ export const END_POINTS = {
       //variables: 'rutas'
       persona: 'personas',
       programa: 'programas',
-      taller: 'talleres'
+      taller: 'talleres',
+      tipopersona: 'tipopersonas',
+      facultad: 'facultades',
     },
 };

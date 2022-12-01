@@ -1,33 +1,32 @@
 import { Component, OnInit } from '@angular/core';
-import {ProgramaService} from "../../../providers/services/programa.service";
+import {FacultadService} from "../../../providers/services/facultad.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormModalComponent} from "./form-modal/form-modal.component";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import {FormModalFacultadComponent} from "./form-modal-facultad/form-modal-facultad.component";
 
 @Component({
-  selector: 'app-programas',
-  templateUrl: './programas.component.html',
-  styleUrls: ['./programas.component.css']
+  selector: 'app-facultad',
+  templateUrl: './facultad.component.html',
+  styleUrls: ['./facultad.component.css']
 })
-export class ProgramasComponent implements OnInit {
+export class FacultadComponent implements OnInit {
 
-  programas: any = [];
-  constructor(private programaService: ProgramaService,
-              private modalService: NgbModal) { }
+  facultades: any =[];
+  constructor(  private facultadService: FacultadService,
+                private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.getProgramas();
-
+    this.getFacultades();
   }
 
-  getProgramas(): void {
-    this.programaService.getAll$().subscribe(response => {
-      this.programas = response.data || [];
+  getFacultades(): void {
+    this.facultadService.getAll$().subscribe(response => {
+      this.facultades = response.data || [];
     });
   }
 
   openModal(): void {
-    const modal = this.modalService.open(FormModalComponent, {
+    const modal = this.modalService.open(FormModalFacultadComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
@@ -38,22 +37,22 @@ export class ProgramasComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Programa',
+          title: 'Facultad',
           text: `${res.message}`,
           showConfirmButton: false,
           timer: 1300
         })
-        this.getProgramas();
+        this.getFacultades();
       }
     })
   }
   openModalEdit(item: any): any {
-    const modal = this.modalService.open(FormModalComponent, {
+    const modal = this.modalService.open(FormModalFacultadComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.proId = item.proId;
+    modal.componentInstance.faId = item.faId;
     modal.componentInstance.item = item;
     modal.componentInstance.title = 'Modificar';
     modal.result.then(res => {
@@ -61,18 +60,18 @@ export class ProgramasComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Programa',
+          title: 'Facultad',
           text: `${res.message}`,
           showConfirmButton: false,
           timer: 1300
         });
-        this.getProgramas();
+        this.getFacultades();
       }
     });
   }
   public onDelete(item: any): void {
-    const ID = item.proId;
-    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.proNombre;
+    const ID = item.faId;
+    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.faNombre;
     if (ID) {
       Swal.fire({
         title: 'Se eliminará el registro',
@@ -87,7 +86,7 @@ export class ProgramasComponent implements OnInit {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.value) {
-          this.programaService.delete$(ID).subscribe(data => {
+          this.facultadService.delete$(ID).subscribe(data => {
             if (data.success) {
               Swal.fire({
                 title: 'Eliminado',
@@ -98,7 +97,7 @@ export class ProgramasComponent implements OnInit {
                 confirmButtonColor: '#7f264a',
                 timer: 1500,
               });
-              this.getProgramas();
+              this.getFacultades();
             }
           });
         }

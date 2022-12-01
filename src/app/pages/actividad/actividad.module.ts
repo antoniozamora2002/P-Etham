@@ -15,6 +15,12 @@ import {PersonaService} from "../../providers/services/persona.service";
 import { FormModalPersonaComponent } from './persona/form-modal-persona/form-modal-persona.component';
 import {TallerService} from "../../providers/services/taller.service";
 import { FormModalTallerComponent } from './talleres/form-modal-taller/form-modal-taller.component';
+import {FacultadService} from "../../providers/services/facultad.service";
+import {TipoPersonaService} from "../../providers/services/tipo-persona.service";
+import { FacultadComponent } from './facultad/facultad.component';
+import { FormModalFacultadComponent } from './facultad/form-modal-facultad/form-modal-facultad.component';
+import { TipoPersonaComponent } from './tipo-persona/tipo-persona.component';
+import { FormModalTipoPersonaComponent } from './tipo-persona/form-modal-tipo-persona/form-modal-tipo-persona.component';
 
 export let validateAndFlattenComponentImports = undefined;
 
@@ -29,7 +35,11 @@ export let validateAndFlattenComponentImports = undefined;
     FormModalComponent,
     PersonaComponent,
     FormModalPersonaComponent,
-    FormModalTallerComponent
+    FormModalTallerComponent,
+    FacultadComponent,
+    FormModalFacultadComponent,
+    TipoPersonaComponent,
+    FormModalTipoPersonaComponent
   ],
   imports: [
     CommonModule,
@@ -40,7 +50,9 @@ export let validateAndFlattenComponentImports = undefined;
   providers: [
     ProgramaService,
     PersonaService,
-    TallerService
+    TallerService,
+    TipoPersonaService,
+    FacultadService
   ]
 })
 export class actividadmodule {
