@@ -21,6 +21,9 @@ import { FacultadComponent } from './facultad/facultad.component';
 import { FormModalFacultadComponent } from './facultad/form-modal-facultad/form-modal-facultad.component';
 import { TipoPersonaComponent } from './tipo-persona/tipo-persona.component';
 import { FormModalTipoPersonaComponent } from './tipo-persona/form-modal-tipo-persona/form-modal-tipo-persona.component';
+import { CarreraComponent } from './carrera/carrera.component';
+import { CarreraService } from 'src/app/providers/services/carrera.service';
+import { FormModalCarreraComponent } from './carrera/form-modal-carrera/form-modal-carrera.component';
 
 export let validateAndFlattenComponentImports = undefined;
 
@@ -39,7 +42,9 @@ export let validateAndFlattenComponentImports = undefined;
     FacultadComponent,
     FormModalFacultadComponent,
     TipoPersonaComponent,
-    FormModalTipoPersonaComponent
+    FormModalTipoPersonaComponent,
+    CarreraComponent,
+    FormModalCarreraComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +57,8 @@ export let validateAndFlattenComponentImports = undefined;
     PersonaService,
     TallerService,
     TipoPersonaService,
-    FacultadService
+    FacultadService,
+    CarreraService
   ]
 })
 export class actividadmodule {

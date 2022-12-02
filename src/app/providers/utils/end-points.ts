@@ -10,6 +10,7 @@ export const END_POINTS = {
     programa: 'programas',
     taller: 'talleres',
     tipopersona: 'tipopersonas',
-    facultad: 'facultades'
+    facultad: 'facultades',
+    carrera: 'carreras'
   },
 };
