@@ -11,6 +11,7 @@ import {PersonaComponent} from "./persona/persona.component";
   import {FacultadComponent} from "./facultad/facultad.component";
   import {TipoPersonaComponent} from "./tipo-persona/tipo-persona.component";
   import { CarreraComponent } from "./carrera/carrera.component";
+  import { TipoMaterialesComponent } from "./tipo-materiales/tipo-materiales.component";
 const routes: Routes = [
   {
     path:'',
@@ -43,7 +44,11 @@ const routes: Routes = [
       {
         path: 'carrera',
         component: CarreraComponent
-      }
+      },
+      {
+        path: 'tipomateriales',
+        component: TipoMaterialesComponent
+      },
     ]
   }
 ];

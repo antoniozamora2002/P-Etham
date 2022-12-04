@@ -11,6 +11,7 @@ export const END_POINTS = {
     taller: 'talleres',
     tipopersona: 'tipopersonas',
     facultad: 'facultades',
-    carrera: 'carreras'
+    carrera: 'carreras',
+    tipomaterial: 'tipomateriales'
   },
 };
