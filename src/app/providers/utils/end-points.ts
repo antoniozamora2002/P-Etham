@@ -12,6 +12,7 @@ export const END_POINTS = {
     tipopersona: 'tipopersonas',
     facultad: 'facultades',
     carrera: 'carreras',
-    tipomaterial: 'tipomateriales'
+    tipomaterial: 'tipomateriales',
+    material: 'materiales'
   },
 };
