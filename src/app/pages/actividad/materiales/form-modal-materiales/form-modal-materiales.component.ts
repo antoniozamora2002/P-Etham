@@ -70,7 +70,7 @@ export class FormModalMaterialesComponent implements OnInit {
     });//serializa y envia formato tipo JS
   }
   update(): void {
-    let data = Object.assign(this.frmMaterial.value, {tipomaterial: {tmId: this.frmMaterial.value.tmId}});
+    let data = Object.assign(this.frmMaterial.value, {taller: {taId: this.frmMaterial.value.taller}},{tipoMateriales: {tmId: this.frmMaterial.value.tipoMateriales}});
     this.materialService.update$(this.maId, data).subscribe(response => {
       if (response.success) {
         this.activeModal.close({success: true, message:response.message});
@@ -79,7 +79,7 @@ export class FormModalMaterialesComponent implements OnInit {
   }
   updateData(): void {
     //xd
-    let data = Object.assign(this.item, {tmId: this.item.tipomaterial.tmId});
+    let data = Object.assign(this.frmMaterial.value, {taller: {taId: this.frmMaterial.value.taller}},{tipoMateriales: {tmId: this.frmMaterial.value.tipoMateriales}});
     this.frmMaterial.patchValue(data);
   }
 }

@@ -1,1 +1,37 @@
-<p>form-modal-persona-taller works!</p>
+<div class="modal-header">
+  <h4 class="modal-title">{{title}} Persona Taller</h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="frmPersonaTaller">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Estado</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="peEstadoAsistencia" class="form-control" placeholder="Ingrese Estado">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Persona</label>
+      <div class="col-sm-9">
+        <select class="form-control" formControlName="persona">
+          <option *ngFor="let persona of personas" [value]="persona.peId">{{persona.peNombres}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Taller</label>
+      <div class="col-sm-9">
+        <select class="form-control" formControlName="taller">
+          <option *ngFor="let talleres of taller" [value]="talleres.taId">{{talleres.taTema}}</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" [disabled]="frmPersonaTaller.invalid" *ngIf="title=='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" [disabled]="frmPersonaTaller.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('Cancel')">Cancelar</button>
+</div>
