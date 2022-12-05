@@ -6,6 +6,7 @@
       <tr>
         <th>#</th>
         <th>Materiales</th>
+        <th>Taller</th>
         <th>Tipo</th>
         <th colspan="2" class="text-center">Opciones</th>
       </tr>
@@ -14,6 +15,7 @@
       <tr *ngFor="let material of materiales; index as i" >
         <td>{{material.maId}}</td>
         <td>{{material.maName}}</td>
+        <td>{{material.taller.taTema}}</td>
         <td>{{material.tipoMateriales.tmName}}</td>
         <td>
           <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(material)">Editar

@@ -1,1 +1,33 @@
-<p>persona-taller works!</p>
+<div class="container mt-3">
+  <button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped ">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Estado</th>
+        <th>Taller</th>
+        <th>Persona</th>
+        <th colspan="2" class="text-center">Opciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let personataller of personatalleres; index as i" >
+        <td>{{personataller.petaId}}</td>
+        <td>{{personataller.peEstadoAsistencia}}</td>
+        <td>{{personataller.taller.taTema}}</td>
+        <td>{{personataller.persona.peDNI}}</td>
+        <td>
+          <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(personataller)">Editar
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(personataller)">Eliminar
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

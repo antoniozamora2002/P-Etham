@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PersonaTallerService} from "../../../providers/services/persona-taller.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {FormModalTallerComponent} from "../talleres/form-modal-taller/form-modal-taller.component";
 import Swal from "sweetalert2";
+import {FormModalPersonaTallerComponent} from "./form-modal-persona-taller/form-modal-persona-taller.component";
 
 @Component({
   selector: 'app-persona-taller',
@@ -26,7 +26,7 @@ personatalleres: any = [];
   }
 
   openModal(): void {
-    const modal = this.modalService.open(FormModalTallerComponent, {
+    const modal = this.modalService.open(FormModalPersonaTallerComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
@@ -47,7 +47,7 @@ personatalleres: any = [];
     })
   }
   openModalEdit(item: any): any {
-    const modal = this.modalService.open(FormModalTallerComponent, {
+    const modal = this.modalService.open(FormModalPersonaTallerComponent, {
       size: 'lg',
       keyboard: false,
       backdrop: 'static'
