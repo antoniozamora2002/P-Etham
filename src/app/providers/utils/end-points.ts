@@ -13,6 +13,7 @@ export const END_POINTS = {
     facultad: 'facultades',
     carrera: 'carreras',
     tipomaterial: 'tipomateriales',
-    material: 'materiales'
+    material: 'materiales',
+    personataller: 'personatalleres'
   },
 };

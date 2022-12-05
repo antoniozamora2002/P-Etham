@@ -29,6 +29,9 @@ import { TipoMaterialService } from 'src/app/providers/services/tipo-material.se
 import { FormModalTipoMaterialesComponent } from './tipo-materiales/form-modal-tipo-materiales/form-modal-tipo-materiales.component';
 import { MaterialService } from 'src/app/providers/services/material.service';
 import { FormModalMaterialesComponent } from './materiales/form-modal-materiales/form-modal-materiales.component';
+import { PersonaTallerComponent } from './persona-taller/persona-taller.component';
+import {PersonaTallerService} from "../../providers/services/persona-taller.service";
+import { FormModalPersonaTallerComponent } from './persona-taller/form-modal-persona-taller/form-modal-persona-taller.component';
 
 export let validateAndFlattenComponentImports = undefined;
 
@@ -52,7 +55,9 @@ export let validateAndFlattenComponentImports = undefined;
     FormModalCarreraComponent,
     TipoMaterialesComponent,
     FormModalTipoMaterialesComponent,
-    FormModalMaterialesComponent
+    FormModalMaterialesComponent,
+    PersonaTallerComponent,
+    FormModalPersonaTallerComponent
   ],
   imports: [
     CommonModule,
@@ -68,7 +73,8 @@ export let validateAndFlattenComponentImports = undefined;
     FacultadService,
     CarreraService,
     TipoMaterialService,
-    MaterialService
+    MaterialService,
+    PersonaTallerService
   ]
 })
 export class actividadmodule {

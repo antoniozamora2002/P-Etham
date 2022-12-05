@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
+import {PersonaTallerService} from "../../../providers/services/persona-taller.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import {TallerService} from "../../../providers/services/taller.service";
+import {FormModalTallerComponent} from "../talleres/form-modal-taller/form-modal-taller.component";
 import Swal from "sweetalert2";
-import {FormModalTallerComponent} from "./form-modal-taller/form-modal-taller.component";
 
 @Component({
-  selector: 'app-talleres',
-  templateUrl: './talleres.component.html',
-  styleUrls: ['./talleres.component.css']
+  selector: 'app-persona-taller',
+  templateUrl: './persona-taller.component.html',
+  styleUrls: ['./persona-taller.component.css']
 })
-export class TalleresComponent implements OnInit {
+export class PersonaTallerComponent implements OnInit {
 
-  talleres: any = [];
-  constructor(private tallerService: TallerService,
+personatalleres: any = [];
+  constructor(private personatallerService: PersonaTallerService,
               private modalService: NgbModal) { }
 
   ngOnInit(): void {
-    this.getTalleres();
+    this.getPersonaTalleres();
   }
 
-  getTalleres(): void {
-    this.tallerService.getAll$().subscribe(response => {
-      this.talleres = response.data || [];
+  getPersonaTalleres(): void {
+    this.personatallerService.getAll$().subscribe(response => {
+      this.personatalleres = response.data || [];
     });
   }
 
@@ -37,12 +37,12 @@ export class TalleresComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Taller',
+          title: 'PersonaTaller',
           text: `${res.message}`,
           showConfirmButton: false,
           timer: 1300
         })
-        this.getTalleres();
+        this.getPersonaTalleres();
       }
     })
   }
@@ -52,7 +52,7 @@ export class TalleresComponent implements OnInit {
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.taId = item.taId;
+    modal.componentInstance.petaId = item.petaId;
     modal.componentInstance.item = item;
     modal.componentInstance.title = 'Modificar';
     modal.result.then(res => {
@@ -60,18 +60,18 @@ export class TalleresComponent implements OnInit {
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Taller',
+          title: 'PersonaTaller',
           text: `${res.message}`,
           showConfirmButton: false,
           timer: 1300
         });
-        this.getTalleres();
+        this.getPersonaTalleres();
       }
     });
   }
   public onDelete(item: any): void {
-    const ID = item.taId;
-    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.taTema;
+    const ID = item.petaId;
+    const mensaje = '¿ Desea eliminar? : ' + ' ' + item.petaId;
     if (ID) {
       Swal.fire({
         title: 'Se eliminará el registro',
@@ -86,7 +86,7 @@ export class TalleresComponent implements OnInit {
         cancelButtonText: 'Cancelar'
       }).then((result) => {
         if (result.value) {
-          this.tallerService.delete$(ID).subscribe(data => {
+          this.personatallerService.delete$(ID).subscribe(data => {
             if (data.success) {
               Swal.fire({
                 title: 'Eliminado',
@@ -97,7 +97,7 @@ export class TalleresComponent implements OnInit {
                 confirmButtonColor: '#7f264a',
                 timer: 1500,
               });
-              this.getTalleres();
+              this.getPersonaTalleres();
             }
           });
         }
