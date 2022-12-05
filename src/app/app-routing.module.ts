@@ -6,6 +6,7 @@ import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import {ProgramasComponent} from "./pages/actividad/programas/programas.component";
 import {MaterialesComponent} from "./pages/actividad/materiales/materiales.component";
 import {TalleresComponent} from "./pages/actividad/talleres/talleres.component";
+import {PaginaPrincipalComponent} from "./core/pagina-principal/pagina-principal.component";
 const routes: Routes = [
   {
     path:'',
@@ -21,6 +22,21 @@ const routes: Routes = [
         loadChildren:()=> import('./pages/actividad/actividad.module')
           .then(m => m.actividadmodule)
 
+      }]
+  },
+  {
+    path:'',
+    component: PaginaPrincipalComponent, //MainPageComponent
+    children: [
+      {
+        path: '',
+        component: PaginaPrincipalComponent,
+        pathMatch: "full"
+      },
+      {
+        path: 'principal',
+        loadChildren:()=> import('.//pages/principal/principal.module')
+          .then(m => m.principalmodule)
       }]
   },
   {

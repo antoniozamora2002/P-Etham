@@ -4,6 +4,9 @@ import { MainPageComponent } from './main-page/main-page.component';
 import { HeaderComponent } from './main-page/header/header.component';
 import { FooterComponent } from './main-page/footer/footer.component';
 import {RouterModule} from "@angular/router";
+import {FooterPrincipalComponent} from "./pagina-principal/footer-principal/footer-principal.component";
+import {HeaderPrincipalComponent} from "./pagina-principal/header-principal/header-principal.component";
+import {PaginaPrincipalComponent} from "./pagina-principal/pagina-principal.component";
 
 
 
@@ -11,7 +14,10 @@ import {RouterModule} from "@angular/router";
   declarations: [
     MainPageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    FooterPrincipalComponent,
+    HeaderPrincipalComponent,
+    PaginaPrincipalComponent
   ],
   imports: [
     CommonModule,
