@@ -14,7 +14,7 @@
       <tr *ngFor="let material of materiales; index as i" >
         <td>{{material.maId}}</td>
         <td>{{material.maName}}</td>
-        <td>{{material.tipomaterial.tmName}}</td>
+        <td>{{material.tipoMateriales.tmName}}</td>
         <td>
           <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(material)">Editar
           </button>

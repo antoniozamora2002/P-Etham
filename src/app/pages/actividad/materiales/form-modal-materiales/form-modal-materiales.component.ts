@@ -54,15 +54,15 @@ export class FormModalMaterialesComponent implements OnInit {
   formInit(): void {
     const controls = {
       maName: ['', [Validators.required]],
-      taId: ['', [Validators.required]],
-      tmId: ['', [Validators.required]],
+      taller: ['', [Validators.required]],
+      tipoMateriales: ['', [Validators.required]]
 
     };
     this.frmMaterial= this.formBuilder.group(controls);// construir formulario
   }
 
   save(): void {
-    let data = Object.assign(this.frmMaterial.value, {tipomaterial: {tmId: this.frmMaterial.value.tmId}});
+    let data = Object.assign(this.frmMaterial.value, {taller: {taId: this.frmMaterial.value.taller}},{tipoMateriales: {tmId: this.frmMaterial.value.tipoMateriales}});
     this.materialService.add$(data).subscribe(response =>{
       if (response.success) {
         this.activeModal.close({success: true, message: response.message});
