@@ -1,1 +1,31 @@
-<p>facultad works!</p>
+<div class="container mt-3">
+  <button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped ">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Facultad</th>
+        <th>Color</th>
+        <th colspan="2" class="text-center">Opciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let facultad of facultades; index as i" >
+        <td>{{facultad.faId}}</td>
+        <td>{{facultad.faNombre}}</td>
+        <td>{{facultad.faColor}}</td>
+        <td>
+          <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(facultad)">Editar
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(facultad)">Eliminar
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
