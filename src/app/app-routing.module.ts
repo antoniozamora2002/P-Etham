@@ -7,6 +7,7 @@ import {ProgramasComponent} from "./pages/actividad/programas/programas.componen
 import {MaterialesComponent} from "./pages/actividad/materiales/materiales.component";
 import {TalleresComponent} from "./pages/actividad/talleres/talleres.component";
 import {PaginaPrincipalComponent} from "./core/pagina-principal/pagina-principal.component";
+import {PrincipalComponent} from "./pages/principal/principal.component";
 const routes: Routes = [
   {
     path:'',
@@ -30,7 +31,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: PaginaPrincipalComponent,
+        component: PrincipalComponent,
         pathMatch: "full"
       },
       {
