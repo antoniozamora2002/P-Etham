@@ -65,6 +65,6 @@ export class FormModalCarreraComponent implements OnInit {
   }
   updateData(): void{
     let data= Object.assign(this.item, {faId: this.item.facultad.faId});
-    this.frmCarrera.patchValue(this.item);
+    this.frmCarrera.patchValue(data);
   }
 }
