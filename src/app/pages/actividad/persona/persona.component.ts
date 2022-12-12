@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {PersonaService} from "../../../providers/services/persona.service";
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
-import Swal from "sweetalert2";
 import {FormModalPersonaComponent} from "./form-modal-persona/form-modal-persona.component";
+import {FormModalTallerComponent} from "../talleres/form-modal-taller/form-modal-taller.component";
+import Swal from "sweetalert2";
 
 @Component({
   selector: 'app-persona',
@@ -11,13 +12,14 @@ import {FormModalPersonaComponent} from "./form-modal-persona/form-modal-persona
 })
 export class PersonaComponent implements OnInit {
 
-  personas: any = [];
+  personas: any =[];
   constructor(private personaService: PersonaService,
               private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.getPersonas();
   }
+
 
   getPersonas(): void{
     this.personaService.getAll$().subscribe(response =>{
@@ -31,7 +33,7 @@ export class PersonaComponent implements OnInit {
       keyboard: false,
       backdrop: 'static'
     });
-    modal.componentInstance.title = 'Nueva';
+    modal.componentInstance.title = 'Nuevo';
     modal.result.then(res => {
       if(res.success) {
         Swal.fire({
@@ -46,7 +48,6 @@ export class PersonaComponent implements OnInit {
       }
     })
   }
-
   openModalEdit(item: any): any {
     const modal = this.modalService.open(FormModalPersonaComponent, {
       size: 'lg',
@@ -70,7 +71,6 @@ export class PersonaComponent implements OnInit {
       }
     });
   }
-
   public onDelete(item: any): void {
     const ID = item.peId;
     const mensaje = '¿ Desea eliminar? : ' + ' ' + item.peNombres;

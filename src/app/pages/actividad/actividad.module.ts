@@ -32,6 +32,7 @@ import { FormModalMaterialesComponent } from './materiales/form-modal-materiales
 import { PersonaTallerComponent } from './persona-taller/persona-taller.component';
 import {PersonaTallerService} from "../../providers/services/persona-taller.service";
 import { FormModalPersonaTallerComponent } from './persona-taller/form-modal-persona-taller/form-modal-persona-taller.component';
+import { ReporteComponent } from './reporte/reporte.component';
 
 export let validateAndFlattenComponentImports = undefined;
 
@@ -57,7 +58,8 @@ export let validateAndFlattenComponentImports = undefined;
     FormModalTipoMaterialesComponent,
     FormModalMaterialesComponent,
     PersonaTallerComponent,
-    FormModalPersonaTallerComponent
+    FormModalPersonaTallerComponent,
+    ReporteComponent,
   ],
   imports: [
     CommonModule,

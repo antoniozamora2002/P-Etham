@@ -1,0 +1,68 @@
+<div class="container mt-3">
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped ">
+      <thead>
+      <br><br><br>
+      <tr>
+        <th>#</th>
+        <th>Taller</th>
+        <th>Descripción</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let taller of talleres; index as i" >
+        <td>{{taller.taId}}</td>
+        <td>{{taller.taTema}}</td>
+        <td>{{taller.taDesc}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div> <br><br>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped ">
+      <thead>
+      <br><br><br>
+      <tr>
+        <th>DNI</th>
+        <th>Persona</th>
+        <th>Tipo</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let persona of personas; index as i" >
+        <td>{{persona.peDNI}}</td>
+        <td>{{persona.peNombres}}</td>
+        <td>{{persona.tipoPersona.tpNombre}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div><br><br>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped ">
+      <thead>
+      <br><br><br>
+      <tr>
+        <th>#</th>
+        <th>Estado</th>
+        <th>Taller</th>
+        <th>Persona</th>
+        <th>Tipo</th>
+        <th>Carrera</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let personataller of personatalleres; index as i" >
+        <td>{{personataller.petaId}}</td>
+        <td>{{personataller.peEstadoAsistencia}}</td>
+        <td>{{personataller.taller.taTema}}</td>
+        <td>{{personataller.persona.peNombres}}</td>
+        <td>{{personataller.persona.tipoPersona.tpNombre}}</td>
+        <td>{{personataller.persona.carrera.caNombre}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

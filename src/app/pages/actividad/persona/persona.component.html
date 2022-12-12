@@ -1,28 +1,29 @@
 <div class="container mt-3">
   <button type="button" (click)="openModal()" class="float-right btn btn-primary mb-5"  >Nuevo</button>
   <div class="table-responsive">
-    <table class="table table-bordered table-striped ">
+    <table class="table table-bordered table-striped">
       <thead>
       <tr>
         <th>#</th>
-        <th>Nombre</th>
-        <th>Apellido Paterno</th>
-        <th>Apellido Materno</th>
+        <th>Persona</th>
+        <th>Apellidos</th>
         <th>DNI</th>
-        <th>Télefono</th>
+        <th>Telefóno</th>
         <th>Tipo</th>
+        <th>Carrera</th>
+        <th>Lugar</th>
         <th colspan="2" class="text-center">Opciones</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let persona of personas; index as i" >
+      <tr *ngFor="let persona of personas;" >
         <td>{{persona.peId}}</td>
         <td>{{persona.peNombres}}</td>
-        <td>{{persona.peApellidoP}}</td>
-        <td>{{persona.peApellidoM}}</td>
+        <td>{{persona.peApellidoP}} {{persona.peApellidoM}}</td>
         <td>{{persona.peDNI}}</td>
         <td>{{persona.peFono}}</td>
         <td>{{persona.tipoPersona.tpNombre}}</td>
+        <td>{{persona.carrera.caNombre}}</td>
         <td>
           <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(persona)">Editar
           </button>

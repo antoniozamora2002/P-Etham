@@ -9,7 +9,7 @@
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Nombres</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="peNombres" class="form-control" placeholder="Ingrese nombre">
+        <input type="text" formControlName="peNombres" class="form-control" placeholder="Ingrese nombres">
       </div>
     </div>
     <div class="form-group row">
@@ -27,27 +27,35 @@
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">DNI</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="peDNI" class="form-control" placeholder="Ingrese DNI">
+        <input type="text" formControlName="peDNI" class="form-control" placeholder="Ingrese dni">
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Télefono</label>
+      <label class="col-sm-3 col-form-label">Celular</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="peFono" class="form-control" placeholder="Ingrese télefono">
+        <input type="text" formControlName="peFono" class="form-control" placeholder="Ingrese celular">
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Tipo Persona</label>
+      <label class="col-sm-3 col-form-label">Tipo persona</label>
       <div class="col-sm-9">
-        <select formControlName="tipoPersona" class="form-control" placeholder="Ingrese tipo de persona">
+        <select class="form-control" formControlName="proId">
           <option *ngFor="let tipopersona of tipopersonas" [value]="tipopersona.tpId">{{tipopersona.tpNombre}}</option>
         </select>
       </div>
     </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Programa</label>
+      <div class="col-sm-9">
+        <select class="form-control" formControlName="proId">
+          <option *ngFor="let carrera of carreras" [value]="carrera.caId">{{carrera.caNombre}}</option>
+        </select>
+      </div>
+    </div>
   </form>
-</div>
+</div><--!asas-->
 <div class="modal-footer">
-  <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Nueva'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
   <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
   <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('Cancel')">Cancelar</button>
 </div>
