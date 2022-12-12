@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import {ReactiveFormsModule} from "@angular/forms";
-import {PrincipalRoutingModule} from "./principal-routing.module";
+import {UsuarioRoutingModule} from "./usuario-routing.module";
 import {CommonModule} from "@angular/common";
-import {PrincipalComponent} from "./principal.component";
-import { LoginComponent } from './login/login.component';
+import { UsuarioComponent } from './usuario.component';
+import {UsuarioPageComponent} from "../../core/usuario-page/usuario-page.component";
+
 
 export let validateAndFlattenComponentImports = undefined;
 
 
 @NgModule({
   declarations: [
-    PrincipalComponent,
-    LoginComponent
+    UsuarioComponent,
   ],
   imports: [
     CommonModule,
-    PrincipalRoutingModule,
+    UsuarioRoutingModule,
     ReactiveFormsModule
   ],
   providers: []
 })
-export class principalmodule {
+export class usuarioModule {
 
 
 }

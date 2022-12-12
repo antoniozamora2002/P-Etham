@@ -32,10 +32,7 @@ import { FormModalMaterialesComponent } from './materiales/form-modal-materiales
 import { PersonaTallerComponent } from './persona-taller/persona-taller.component';
 import {PersonaTallerService} from "../../providers/services/persona-taller.service";
 import { FormModalPersonaTallerComponent } from './persona-taller/form-modal-persona-taller/form-modal-persona-taller.component';
-
 export let validateAndFlattenComponentImports = undefined;
-
-
 @NgModule({
   declarations: [
     MaterialesComponent,

@@ -33,8 +33,6 @@ export class FormModalTipoPersonaComponent implements OnInit {
     const controls = {
       tpNombre: ['', [Validators.required]],
       tpDesc: ['', [Validators.required]],
-
-
     };
     this.frmTipoPersona= this.formBuilder.group(controls);// construir formulario
   }
