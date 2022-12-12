@@ -8,8 +8,10 @@ import {MaterialesComponent} from "./pages/actividad/materiales/materiales.compo
 import {TalleresComponent} from "./pages/actividad/talleres/talleres.component";
 import {PaginaPrincipalComponent} from "./core/pagina-principal/pagina-principal.component";
 import {PrincipalComponent} from "./pages/principal/principal.component";
+
 import { UsuarioPageComponent } from "./core/usuario-page/usuario-page.component";
 import {UsuarioComponent} from "./pages/usuario/usuario.component";
+
 const routes: Routes = [
 
   {
@@ -49,6 +51,7 @@ const routes: Routes = [
       {
         path: '',
         component: UsuarioComponent,
+        component: PrincipalComponent,
         pathMatch: "full"
       },
       {

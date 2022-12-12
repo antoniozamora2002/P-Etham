@@ -64,8 +64,8 @@ export class FormModalTallerComponent implements OnInit {
     });//serializa y envia formato tipo JS
   }
   update(): void {
-
-    this.tallerService.update$(this.taId, this.frmTaller.value).subscribe(response => {
+    let data = Object.assign(this.frmTaller.value, {programa: {proId: this.frmTaller.value.proId}});
+    this.tallerService.update$(this.taId, data).subscribe(response => {
       if (response.success) {
         this.activeModal.close({success: true, message:response.message});
       }

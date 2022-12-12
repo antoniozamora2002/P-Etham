@@ -28,8 +28,8 @@ export class FormModalFacultadComponent implements OnInit {
 
   formInit(): void {
     const controls = {
-      proNombre: ['', [Validators.required]],
-      proDescripcion: ['', [Validators.required]]
+      faNombre: ['', [Validators.required]],
+      faColor: ['', [Validators.required]]
 
     };
     this.frmFacultad= this.formBuilder.group(controls);// construir formulario
