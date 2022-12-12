@@ -51,7 +51,6 @@ const routes: Routes = [
       {
         path: '',
         component: UsuarioComponent,
-        component: PrincipalComponent,
         pathMatch: "full"
       },
       {
