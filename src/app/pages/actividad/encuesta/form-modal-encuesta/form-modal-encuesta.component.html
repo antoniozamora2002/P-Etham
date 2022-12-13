@@ -1,0 +1,33 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}} Programa</h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form [formGroup]="frmEncuesta">
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Grupo</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="enGrupo" class="form-control" placeholder="Ingrese grupo">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Pregunta</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="enPregunta" class="form-control" placeholder="Ingrese pregunta">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Orden de pregunta</label>
+      <div class="col-sm-9">
+        <input type="text" formControlName="enOrdenpregunta" class="form-control" placeholder="Ingrese orden">
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" [disabled]="frmEncuesta.invalid" *ngIf="title=='Nueva'" class="btn btn-primary" (click)="save()">Guardar</button>
+  <button type="button" [disabled]="frmEncuesta.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('Cancel')">Cancelar</button>
+</div>

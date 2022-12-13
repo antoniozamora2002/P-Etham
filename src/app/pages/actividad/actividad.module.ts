@@ -33,6 +33,9 @@ import { PersonaTallerComponent } from './persona-taller/persona-taller.componen
 import {PersonaTallerService} from "../../providers/services/persona-taller.service";
 import { FormModalPersonaTallerComponent } from './persona-taller/form-modal-persona-taller/form-modal-persona-taller.component';
 import { ReporteComponent } from './reporte/reporte.component';
+import { EncuestaComponent } from './encuesta/encuesta.component';
+import {EncuestaService} from "../../providers/services/encuesta.service";
+import { FormModalEncuestaComponent } from './encuesta/form-modal-encuesta/form-modal-encuesta.component';
 @NgModule({
   declarations: [
     MaterialesComponent,
@@ -56,6 +59,8 @@ import { ReporteComponent } from './reporte/reporte.component';
     PersonaTallerComponent,
     FormModalPersonaTallerComponent,
     ReporteComponent,
+    EncuestaComponent,
+    FormModalEncuestaComponent,
   ],
   imports: [
     CommonModule,
@@ -72,7 +77,8 @@ import { ReporteComponent } from './reporte/reporte.component';
     CarreraService,
     TipoMaterialService,
     MaterialService,
-    PersonaTallerService
+    PersonaTallerService,
+    EncuestaService
   ]
 })
 export class actividadmodule {
