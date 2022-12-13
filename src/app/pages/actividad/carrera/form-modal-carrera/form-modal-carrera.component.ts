@@ -21,9 +21,6 @@ export class FormModalCarreraComponent implements OnInit {
                private formBuilder:FormBuilder,
                private carreraService: CarreraService,
                private facultadService: FacultadService) { }
-
-  Id = document.getElementById('id');
-
   ngOnInit(): void {
     this.formInit(); //el formulario esta inicializado
     this.getFacultades();
