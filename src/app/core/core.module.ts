@@ -7,6 +7,9 @@ import {RouterModule} from "@angular/router";
 import {FooterPrincipalComponent} from "./pagina-principal/footer-principal/footer-principal.component";
 import {HeaderPrincipalComponent} from "./pagina-principal/header-principal/header-principal.component";
 import {PaginaPrincipalComponent} from "./pagina-principal/pagina-principal.component";
+import { UsuarioPageComponent } from './usuario-page/usuario-page.component';
+import { HeaderUsuarioComponent } from './usuario-page/header-usuario/header-usuario.component';
+import { FooterUsuarioComponent } from './usuario-page/footer-usuario/footer-usuario.component';
 
 
 
@@ -17,7 +20,10 @@ import {PaginaPrincipalComponent} from "./pagina-principal/pagina-principal.comp
     FooterComponent,
     FooterPrincipalComponent,
     HeaderPrincipalComponent,
-    PaginaPrincipalComponent
+    PaginaPrincipalComponent,
+    UsuarioPageComponent,
+    HeaderUsuarioComponent,
+    FooterUsuarioComponent
   ],
   imports: [
     CommonModule,

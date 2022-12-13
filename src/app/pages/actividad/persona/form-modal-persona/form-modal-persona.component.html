@@ -37,23 +37,23 @@
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Tipo persona</label>
+      <label class="col-sm-3 col-form-label">Tipo</label>
       <div class="col-sm-9">
-        <select class="form-control" formControlName="proId">
+        <select class="form-control" formControlName="tpId">
           <option *ngFor="let tipopersona of tipopersonas" [value]="tipopersona.tpId">{{tipopersona.tpNombre}}</option>
         </select>
       </div>
     </div>
     <div class="form-group row">
-      <label class="col-sm-3 col-form-label">Programa</label>
+      <label class="col-sm-3 col-form-label">Carrera</label>
       <div class="col-sm-9">
-        <select class="form-control" formControlName="proId">
+        <select class="form-control" formControlName="caId">
           <option *ngFor="let carrera of carreras" [value]="carrera.caId">{{carrera.caNombre}}</option>
         </select>
       </div>
     </div>
   </form>
-</div><--!asas-->
+</div>
 <div class="modal-footer">
   <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Nuevo'" class="btn btn-primary" (click)="save()">Guardar</button>
   <button type="button" [disabled]="frmPersona.invalid" *ngIf="title=='Modificar'" class="btn btn-primary" (click)="update()">Modificar</button>

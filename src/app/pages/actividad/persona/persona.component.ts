@@ -4,6 +4,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {FormModalPersonaComponent} from "./form-modal-persona/form-modal-persona.component";
 import {FormModalTallerComponent} from "../talleres/form-modal-taller/form-modal-taller.component";
 import Swal from "sweetalert2";
+import {FormModalComponent} from "../programas/form-modal/form-modal.component";
 
 @Component({
   selector: 'app-persona',
@@ -12,17 +13,17 @@ import Swal from "sweetalert2";
 })
 export class PersonaComponent implements OnInit {
 
-  personas: any =[];
-  constructor(private personaService: PersonaService,
-              private modalService: NgbModal) { }
+  personas: any=[];
+  constructor(private modalService: NgbModal,
+              private personaService: PersonaService) {
+  }
 
   ngOnInit(): void {
     this.getPersonas();
   }
 
-
-  getPersonas(): void{
-    this.personaService.getAll$().subscribe(response =>{
+  getPersonas(): void {
+    this.personaService.getAll$().subscribe(response => {
       this.personas = response.data || [];
     });
   }

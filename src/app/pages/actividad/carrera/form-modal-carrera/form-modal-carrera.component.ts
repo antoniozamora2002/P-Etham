@@ -20,8 +20,7 @@ export class FormModalCarreraComponent implements OnInit {
   constructor( public activeModal: NgbActiveModal,
                private formBuilder:FormBuilder,
                private carreraService: CarreraService,
-               private facultadService: FacultadService
-  ) { }
+               private facultadService: FacultadService) { }
 
   Id = document.getElementById('id');
 

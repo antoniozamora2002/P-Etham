@@ -12,7 +12,6 @@ import {FormModalCarreraComponent} from "./form-modal-carrera/form-modal-carrera
 export class CarreraComponent implements OnInit {
 
   carreras: any= [];
-
   constructor(private carreraService: CarreraService,
               private modalService:NgbModal) { }
 

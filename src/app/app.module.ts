@@ -8,6 +8,8 @@ import { CoreModule } from './core/core.module';
 import {HttpClientModule} from "@angular/common/http";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UsuarioComponent } from './pages/usuario/usuario.component';
+import { UsuarioPageComponent } from './core/usuario-page/usuario-page.component';
 
 @NgModule({
   declarations: [

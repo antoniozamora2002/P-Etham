@@ -55,14 +55,16 @@ export class FormModalMaterialesComponent implements OnInit {
     const controls = {
       maName: ['', [Validators.required]],
       taller: ['', [Validators.required]],
-      tipoMateriales: ['', [Validators.required]]
+      tmId: ['', [Validators.required]]
 
     };
     this.frmMaterial= this.formBuilder.group(controls);// construir formulario
   }
 
   save(): void {
-    let data = Object.assign(this.frmMaterial.value, {taller: {taId: this.frmMaterial.value.taller}},{tipoMateriales: {tmId: this.frmMaterial.value.tipoMateriales}});
+    let data = Object.assign(this.frmMaterial.value,
+      {taller: {taId: this.frmMaterial.value.taId}},
+      {tipoMateriales: {tmId: this.frmMaterial.value.tmId}});
     this.materialService.add$(data).subscribe(response =>{
       if (response.success) {
         this.activeModal.close({success: true, message: response.message});
@@ -70,7 +72,9 @@ export class FormModalMaterialesComponent implements OnInit {
     });//serializa y envia formato tipo JS
   }
   update(): void {
-    let data = Object.assign(this.frmMaterial.value, {taller: {taId: this.frmMaterial.value.taller}},{tipoMateriales: {tmId: this.frmMaterial.value.tipoMateriales}});
+    let data = Object.assign(this.frmMaterial.value,
+      {taller: {taId: this.frmMaterial.value.taId}},
+      {tipoMateriales: {tmId: this.frmMaterial.value.tmId}});
     this.materialService.update$(this.maId, data).subscribe(response => {
       if (response.success) {
         this.activeModal.close({success: true, message:response.message});
@@ -79,7 +83,9 @@ export class FormModalMaterialesComponent implements OnInit {
   }
   updateData(): void {
     //xd
-    let data = Object.assign(this.frmMaterial.value, {taller: {taId: this.frmMaterial.value.taller}},{tipoMateriales: {tmId: this.frmMaterial.value.tipoMateriales}});
+    let data = Object.assign(this.item,
+      {taId: this.item.taller.taId},
+      {tmId: this.item.tipoMateriales.tmId});
     this.frmMaterial.patchValue(data);
   }
 }

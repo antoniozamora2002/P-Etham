@@ -56,7 +56,6 @@ export class FormModalPersonaTallerComponent implements OnInit {
       peEstadoAsistencia: ['', [Validators.required]],
       taller: ['', [Validators.required]],
       persona: ['', [Validators.required]]
-
     };
     this.frmPersonaTaller= this.formBuilder.group(controls);// construir formulario
   }
