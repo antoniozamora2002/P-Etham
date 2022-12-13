@@ -15,7 +15,7 @@ export class FormModalPersonaTallerComponent implements OnInit {
   @Input() title: any;
   @Input() petaId: any;
   @Input() item: any;
-  taller: any = [];
+  talleres: any = [];
   personas: any = [];
   //@ts-ignore
   frmPersonaTaller: FormGroup;
@@ -41,7 +41,7 @@ export class FormModalPersonaTallerComponent implements OnInit {
 
   getTaller(): void {
     this.tallerService.getAll$().subscribe(response => {
-      this.taller = response.data || [];
+      this.talleres = response.data || [];
     });
   }
 
@@ -53,9 +53,10 @@ export class FormModalPersonaTallerComponent implements OnInit {
 
   formInit(): void {
     const controls = {
-      peEstadoAsistencia: ['', [Validators.required]],
+      petaEstadoAsistencia: ['', [Validators.required]],
       taller: ['', [Validators.required]],
-      persona: ['', [Validators.required]]
+      persona: ['', [Validators.required]],
+      petaFecha: ['', [Validators.required]],
     };
     this.frmPersonaTaller= this.formBuilder.group(controls);// construir formulario
   }

@@ -7,7 +7,9 @@
         <th>#</th>
         <th>Estado</th>
         <th>Taller</th>
+        <th>DNI</th>
         <th>Persona</th>
+        <th>Fecha</th>
         <th colspan="2" class="text-center">Opciones</th>
       </tr>
       </thead>
@@ -17,6 +19,8 @@
         <td>{{personataller.petaEstadoAsistencia}}</td>
         <td>{{personataller.taller.taTema}}</td>
         <td>{{personataller.persona.peDNI}}</td>
+        <td>{{personataller.persona.peNombres}} {{personataller.persona.peApellidoP}}</td>
+        <td>{{personataller.petaFecha | date:'d/MM/YYYY'}}</td>
         <td>
           <button type="button" class="btn btn-sm btn-warning" (click)="openModalEdit(personataller)">Editar
           </button>

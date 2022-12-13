@@ -9,7 +9,7 @@
     <div class="form-group row">
       <label class="col-sm-3 col-form-label">Estado</label>
       <div class="col-sm-9">
-        <input type="text" formControlName="peEstadoAsistencia" class="form-control" placeholder="Ingrese Estado">
+        <input type="text" formControlName="petaEstadoAsistencia" class="form-control" placeholder="Ingrese Estado">
       </div>
     </div>
     <div class="form-group row">
@@ -24,8 +24,14 @@
       <label class="col-sm-3 col-form-label">Taller</label>
       <div class="col-sm-9">
         <select class="form-control" formControlName="taller">
-          <option *ngFor="let talleres of taller" [value]="talleres.taId">{{talleres.taTema}}</option>
+          <option *ngFor="let taller of talleres" [value]="taller.taId">{{taller.taTema}}</option>
         </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-3 col-form-label">Fecha</label>
+      <div class="col-sm-9">
+        <input type="date" formControlName="petaFecha" class="form-control" placeholder="Ingrese fecha">
       </div>
     </div>
   </form>
