@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {LoginComponent} from "./login/login.component";
+import {TallerService} from "../../providers/services/taller.service";
 
 @Component({
   selector: 'app-principal',
@@ -11,9 +12,12 @@ export class PrincipalComponent implements OnInit {
 
 
   constructor(
-    private modalService: NgbModal ) { }
-
+     private modalService: NgbModal,
+     private tallerService: TallerService
+  ) { }
+  talleres: any =[];
   ngOnInit(): void {
+    this.getTaller();
   }
   openModal(): void {
     const modal = this.modalService.open(LoginComponent, {
@@ -22,6 +26,11 @@ export class PrincipalComponent implements OnInit {
       backdrop: 'static'
     });
     modal.componentInstance.title = 'Nuevo';
+  }
+  getTaller(): void {
+    this.tallerService.getAll$().subscribe(response => {
+      this.talleres = response.data || [];
+    });
   }
 
 }
