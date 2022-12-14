@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}}</h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<table class="table table-bordered table-striped">
+  <thead>
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+    <th colspan="2" class="text-center" >Estado</th>
+  </tr>
+  <tbody>
+<tr *ngFor="let personas of persona; let i = index;" >
+  <td>{{i+1}}</td>
+  <td>{{personas.persona.peNombres}}</td>
+  <td><input type="radio"  value="P" name="{{personas.petaId}}">Presente</td>
+  <td><input type="radio"  value="F" name="{{personas.petaId}}">Ausente</td>
+</tr>
+</tbody>
+</table>
+<div class="d-flex justify-content-center"><button type="button" class="btn btn-sm btn-danger d-flex justify-content-center" (click)="Actualizar()" >Guardar</button></div>
+<br>

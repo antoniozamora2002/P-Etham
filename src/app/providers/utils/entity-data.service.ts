@@ -21,9 +21,14 @@ export class EntityDataService<T> {
         return this.httpClient.get<T>(`${this.endPoint}/${id}/`);
     }
 
+    public getByTaller$(id: string): Observable<T> {
+    return this.httpClient.get<T>(`${this.endPoint}/Taller/${id}`);
+    }
+
     public add$(entity: T): Observable<T> {
         return this.httpClient.post<T>(this.endPoint, entity);
     }
+
 
     public update$(id: string, entity: T): Observable<T> {
         return this.httpClient.put<T>(`${this.endPoint}/${id}/`, entity);

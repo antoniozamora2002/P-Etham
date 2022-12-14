@@ -36,6 +36,7 @@ import { ReporteComponent } from './reporte/reporte.component';
 import { EncuestaComponent } from './encuesta/encuesta.component';
 import {EncuestaService} from "../../providers/services/encuesta.service";
 import { FormModalEncuestaComponent } from './encuesta/form-modal-encuesta/form-modal-encuesta.component';
+import { FormModalAsistenciaComponent } from './talleres/form-modal-asistencia/form-modal-asistencia.component';
 @NgModule({
   declarations: [
     MaterialesComponent,
@@ -61,6 +62,7 @@ import { FormModalEncuestaComponent } from './encuesta/form-modal-encuesta/form-
     ReporteComponent,
     EncuestaComponent,
     FormModalEncuestaComponent,
+    FormModalAsistenciaComponent,
   ],
   imports: [
     CommonModule,

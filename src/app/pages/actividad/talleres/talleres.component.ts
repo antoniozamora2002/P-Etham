@@ -3,6 +3,7 @@ import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 import {TallerService} from "../../../providers/services/taller.service";
 import Swal from "sweetalert2";
 import {FormModalTallerComponent} from "./form-modal-taller/form-modal-taller.component";
+import {FormModalAsistenciaComponent} from "./form-modal-asistencia/form-modal-asistencia.component";
 
 @Component({
   selector: 'app-talleres',
@@ -103,6 +104,17 @@ export class TalleresComponent implements OnInit {
         }
       });
     }
+  }
+  openModalAsistencia(item: any): any {
+    const modal = this.modalService.open(FormModalAsistenciaComponent, {
+      size: 'lg',
+      keyboard: false,
+      backdrop: 'static'
+    });
+    modal.componentInstance.taId = item.taId;
+    modal.componentInstance.item = item;
+    modal.componentInstance.title = 'Registrar Asistencia';
+        this.getTalleres();
   }
 
 }

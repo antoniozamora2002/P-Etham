@@ -17,6 +17,7 @@ export class FormModalTallerComponent implements OnInit {
   //@ts-ignore
   frmTaller: FormGroup;
   programas: any = [];
+
   constructor(
     public activeModal: NgbActiveModal,
     private formBuilder:FormBuilder,
@@ -36,6 +37,7 @@ export class FormModalTallerComponent implements OnInit {
     }
   }
 
+
   getProgramas(): void {
     this.programaService.getAll$().subscribe(response => {
       this.programas = response.data || [];
@@ -46,7 +48,7 @@ export class FormModalTallerComponent implements OnInit {
     const controls = {
       taTema: ['', [Validators.required]],
       taDesc: ['', [Validators.required]],
-      taFecha: ['', ],
+      taFecha: ['', [Validators.required]],
       taHora: ['', [Validators.required]],
       taHoraAcademicas: ['', [Validators.required]],
       taLugar: ['', [Validators.required]],

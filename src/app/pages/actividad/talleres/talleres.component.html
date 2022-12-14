@@ -12,7 +12,7 @@
         <th>Fecha</th>
         <th>Hora</th>
         <th>Lugar</th>
-        <th colspan="2" class="text-center">Opciones</th>
+        <th colspan="3" class="text-center">Opciones</th>
       </tr>
       </thead>
       <tbody>
@@ -31,6 +31,10 @@
         </td>
         <td>
           <button type="button" class="btn btn-sm btn-danger" (click)="onDelete(taller)">Eliminar
+          </button>
+        </td>
+        <td>
+          <button type="button" class="btn btn-sm btn-danger" (click)="openModalAsistencia(taller)">Asistencia
           </button>
         </td>
       </tr>
