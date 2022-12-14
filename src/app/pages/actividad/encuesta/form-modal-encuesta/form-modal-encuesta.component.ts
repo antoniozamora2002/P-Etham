@@ -15,17 +15,25 @@ export class FormModalEncuestaComponent implements OnInit {
   @Input() item: any;
   //@ts-ignore
   frmEncuesta: FormGroup;
+  encuestas: any = [];
   constructor(public activeModal: NgbActiveModal,
               private formBuilder:FormBuilder,
               private encuestaService: EncuestaService) { }
 
   ngOnInit(): void {
-    this.formInit(); //el formulario esta inicializado
+    this.formInit();
+    this.getEncuestas();
+    //el formulario esta inicializado
     if(this.item){
       this.updateData();
     }
   }
 
+  getEncuestas(): void {
+    this.encuestaService.getAll$().subscribe(response => {
+      this.encuestas = response.data || [];
+    });
+  }
   formInit(): void {
     const controls = {
       enGrupo: ['', [Validators.required]],

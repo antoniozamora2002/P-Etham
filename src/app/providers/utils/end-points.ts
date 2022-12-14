@@ -7,9 +7,10 @@ export const END_POINTS = {
   actividad: {
     //variables: 'rutas'
     persona: 'personas',
-    encuesta: 'encuestas',
+    encuesta: 'encuesta',
     programa: 'programas',
     taller: 'talleres',
+    resencuesta: 'respuestaEncuestas',
     tipopersona: 'tipopersonas',
     facultad: 'facultades',
     carrera: 'carreras',

@@ -1,0 +1,27 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{title}} </h4>
+  <button type="button" class="close" aria-label="Close button" aria-describedby="modal-title" (click)="activeModal.dismiss()">
+    <span aria-hidden="true">x</span>
+  </button>
+</div>
+<div class="modal-body">
+
+  <div>
+    <div class="d-flex justify-content-center">
+      <input type="text"  class="col-sm-3 " id="DNI" placeholder="Ingrese Dni de la persona">
+    </div >
+      <br>
+    <div class="d-flex justify-content-center"><button type="button" class=" " (click)="Traer()">Buscar Persona</button></div>
+      <br>
+    </div>
+
+  <form [formGroup]="frmresenc">
+    <div *ngFor="let enc of enc">
+      <label>{{enc.enPregunta}}</label><br>
+      <input type="password" id="{{enc.enId}}" class="" >
+    </div>
+</form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-outline-secondary" (click)="activeModal.dismiss('Cancel')">Cancelar</button>
+</div>

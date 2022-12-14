@@ -28,15 +28,18 @@
         </div>
       </li>
       <li class="nav-item active">
-        <a style="font-weight: bold; color: #003366" class="nav-link" href="/actividad/personatalleres">Asistencia<span class="sr-only">(current)</span></a>
+        <a style="font-weight: bold; color: #003366" class="nav-link" href="/actividad/personatalleres">Registrar en talleres<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a style="font-weight: bold; color: #003366" class="nav-link" href="/actividad/encuestas">Encuesta<span class="sr-only">(current)</span></a>
+      <li class="nav-item dropdown">
+        <a style="font-weight: bold; color: #003366" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">Gestionar Encuestas</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/actividad/encuestas">Preguntas Encuesta</a>
+          <a class="dropdown-item" routerLink="/actividad/respuestasencuestas">Respuestas Encuesta</a>
+        </div>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <button class="btn btn-outline-success my-2 my-sm-0" (click)="openModal()" type="button">Registrar Encuesta</button>
     </form>
   </div>
 

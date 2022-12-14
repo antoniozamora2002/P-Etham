@@ -25,9 +25,6 @@ export class FormModalTallerComponent implements OnInit {
     private programaService: ProgramaService
   ) { }
 
-  Id = document.getElementById('id');
-
-
 
   ngOnInit(): void {
     this.formInit(); //el formulario esta inicializado

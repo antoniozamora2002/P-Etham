@@ -22,8 +22,16 @@ export class EntityDataService<T> {
     }
 
     public getByTaller$(id: string): Observable<T> {
-    return this.httpClient.get<T>(`${this.endPoint}/Taller/${id}`);
+    return this.httpClient.get<T>(`${this.endPoint}/Taller/${id}/`);
     }
+
+  public getByEnGrupo$(id: string): Observable<T> {
+    return this.httpClient.get<T>(`${this.endPoint}/enGrupo/${id}/`);
+  }
+
+  public getByPeDNI$(peDNI: string): Observable<T> {
+    return this.httpClient.get<T>(`${this.endPoint}/peDNI/${peDNI}/`);
+  }
 
     public add$(entity: T): Observable<T> {
         return this.httpClient.post<T>(this.endPoint, entity);

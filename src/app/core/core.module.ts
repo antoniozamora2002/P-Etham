@@ -10,6 +10,7 @@ import {PaginaPrincipalComponent} from "./pagina-principal/pagina-principal.comp
 import { UsuarioPageComponent } from './usuario-page/usuario-page.component';
 import { HeaderUsuarioComponent } from './usuario-page/header-usuario/header-usuario.component';
 import { FooterUsuarioComponent } from './usuario-page/footer-usuario/footer-usuario.component';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 
 
@@ -27,7 +28,7 @@ import { FooterUsuarioComponent } from './usuario-page/footer-usuario/footer-usu
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class CoreModule { }

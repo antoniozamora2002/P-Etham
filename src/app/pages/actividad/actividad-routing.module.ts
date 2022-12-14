@@ -16,6 +16,7 @@ import {PersonaComponent} from "./persona/persona.component";
   import {ReporteComponent} from "./reporte/reporte.component";
   import {EncuestaComponent} from "./encuesta/encuesta.component";
   import { DashboardComponent } from "../dashboard/dashboard.component";
+  import { ResEncComponent } from "./res-enc/res-enc.component";
 const routes: Routes = [
   {
     path:'',
@@ -69,6 +70,10 @@ const routes: Routes = [
       {
         path: 'encuestas',
         component: EncuestaComponent
+      },
+      {
+        path: 'resencuestas',
+        component: ResEncComponent
       }
     ]
   }
