@@ -14,12 +14,21 @@ import {PersonaComponent} from "./persona/persona.component";
   import { TipoMaterialesComponent } from "./tipo-materiales/tipo-materiales.component";
   import {PersonaTallerComponent} from "./persona-taller/persona-taller.component";
   import {ReporteComponent} from "./reporte/reporte.component";
+<<<<<<< HEAD
   import {EncuestaComponent} from "./encuesta/encuesta.component";
+=======
+  import { DashboardComponent } from "../dashboard/dashboard.component";
+>>>>>>> 98a469bb264aba3eb66ed68dea5b4935d2b8a673
 const routes: Routes = [
+  {
+    path:'',
+    component: DashboardComponent,
+  },
   {
     path:'',
     component: ActividadComponent,
     children: [
+<<<<<<< HEAD
       {
         path: 'materiales',
         component: MaterialesComponent,
@@ -65,6 +74,49 @@ const routes: Routes = [
         component: EncuestaComponent
       }
     ]
+=======
+    {
+      path: 'materiales',
+      component: MaterialesComponent,
+    },
+    {
+      path: 'programas',
+      component: ProgramasComponent,
+    },
+    {
+      path: 'talleres',
+      component: TalleresComponent,
+    },
+    {
+      path: 'personas',
+      component: PersonaComponent,
+    },
+    {
+      path: 'facultades',
+      component: FacultadComponent,
+    },
+    {
+      path: 'tipopersonas',
+      component: TipoPersonaComponent
+    },
+    {
+      path: 'carreras',
+      component: CarreraComponent
+    },
+    {
+      path: 'tipomateriales',
+      component: TipoMaterialesComponent
+    },
+    {
+      path: 'personatalleres',
+      component: PersonaTallerComponent
+    },
+    {
+      path: 'reporte',
+      component: ReporteComponent
+    }
+  ]
+>>>>>>> 98a469bb264aba3eb66ed68dea5b4935d2b8a673
   }
 ];
 @NgModule({

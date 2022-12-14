@@ -11,6 +11,7 @@ import {PrincipalComponent} from "./pages/principal/principal.component";
 
 import { UsuarioPageComponent } from "./core/usuario-page/usuario-page.component";
 import {UsuarioComponent} from "./pages/usuario/usuario.component";
+import {ActividadComponent} from "./pages/actividad/actividad.component";
 
 const routes: Routes = [
 
@@ -34,7 +35,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: DashboardComponent,
+        component: ActividadComponent,
         pathMatch: "full"
       },
       {
